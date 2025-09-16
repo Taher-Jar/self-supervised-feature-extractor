@@ -1,0 +1,20 @@
+_target_: src.methods.supervised.model.Supervised_Trainer
+name: "Supervised"
+
+backbone: 
+  timm_backbone : "mobilenetv2_100"
+  pretrain: True
+  freeze: True
+
+head:
+  n_layers: 1
+  hidden_dim: 512
+  dropout: True
+checkpoint:
+  monitor: "val_acc"
+  save_top_k: 1
+  mode: "max"
+  verbose: False
+  filename: 'model_{epoch:02d}-{val_loss:.2f}'
+
+description: "Supervised approach with no pretraining by self-supervised"

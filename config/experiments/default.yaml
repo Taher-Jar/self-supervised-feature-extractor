@@ -1,0 +1,10 @@
+#Housekeeping
+seed: 69
+gpus: 1
+
+#datamodule
+batch_size: 32
+num_workers: 8
+
+# training
+max_epochs: 100

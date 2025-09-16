@@ -1,0 +1,28 @@
+_target_: src.methods.self-supervised.dino.model.DINO_Trainer
+name: "DINO"
+
+backbone:
+  timm_backbone: "mobilenetv2_100"
+  pretrain: True
+head:
+  n_layers: 1
+  hidden_dim: 512
+  out_dim: 1024
+  norm_last_layer: True
+loss:
+  teacher_temp: 0.04
+  student_temp: 0.1
+optimization:
+  weight_decay: 0.4
+  clip_grad: 2.0
+  momentum_teacher: 0.9995
+  learning_rate: 0.00001
+augmentation:
+  n_crops: 4
+checkpoint:
+  monitor: "val_loss"
+  save_top_k: 1
+  mode: "min"
+  verbose: False
+  filename: 'model_{epoch:02d}-{val_loss:.2f}'
+description: " "

@@ -1,0 +1,7 @@
+_target_: src.datamodules.default.DataModule 
+
+path_datasets : ["/home/tjarjanazi/self-supervised-feature-extractor/Data/FACT 2.0"]
+# path_datasets : ["D:/daniele/self-supervised-learning/dataset/inat2021_52/self_supervised/labelled", "D:/daniele/self-supervised-learning/dataset/inat2021_52/supervised/"]
+name: inat2021_52
+n_class: 2
+feeding_method: modified  # original, modified
